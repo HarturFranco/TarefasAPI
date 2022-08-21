@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'tarefaA.wsgi.application'
 
 DATABASES = {
         'default': {
-            'ENGINE': 'djongo',
-            'NAME': 'your-db-name',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'sistemawebnuvem',
             'ENFORCE_SCHEMA': False,
             'CLIENT': {
-                'host': os.environ["MONGODB_URI"]
+                'host': os.environ["DATABASE_URL"]
             }  
         }
 }
@@ -97,7 +97,6 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
